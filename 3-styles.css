@@ -1,0 +1,85 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  appearance: none;
+}
+
+.menu-item {
+  display: none;
+  color: white;
+  text-decoration: none;
+  background-color: #d73953;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  transition: 0.1s ease-out;
+}
+
+a:hover {
+  background-color: white;
+  color: #d73953;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #d73953;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  transition: 0.9s cubic-bezier(0.17, 0.67, 0, 1.01);
+  margin: 10px;
+}
+
+.menu-line {
+  display: block;
+  width: 15px;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  margin-bottom: 2px;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(45deg);
+  transition: 0.1s ease-out;
+  margin-bottom: -1px;
+}
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  display: none;
+  transition: 0.1s ease-out;
+}
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  transform: rotate(-45deg);
+  transition: 0.1s ease-out;
+  margin-bottom: -1px;
+}
+
+.menu-open:checked ~ .menu-item {
+  display: flex;
+  transition: 0.3s ease-out;
+}
+
+.menu-open:checked ~ .menu-item:hover {
+  background-color: white;
+  color: #d73953;
+  border: 0.5px solid #d73953;
+}
+
+.menu-open:checked ~ .menu-open-button,
+.menu-open:checked ~ .menu-item {
+  height: 2rem;
+  width: 2rem;
+}
